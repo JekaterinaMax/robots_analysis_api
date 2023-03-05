@@ -1,0 +1,24 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Task</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Название документа</th>
+                <th>Имя подпиавшего</th>
+            </tr>
+        </thead>
+        <tbody>
+                {% for item in items %}
+                <tr>
+                    <td>{{ item['doc_name'] }}</td>
+                    <td>{{ item['member_name'] }}</td>
+                </tr>
+                {% endfor %}
+        </tbody>
+</body>
+</html>
