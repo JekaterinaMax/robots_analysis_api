@@ -21,7 +21,7 @@ def get_contracts_by_region(region_code):
 
 try:
     result = get_contracts_by_region(248885)
-except:  # catch *all* exceptions
+except: 
     e = sys.exc_info()[0]
 with open('result.json', 'w') as json_file:
     json.dump(result, json_file)
@@ -71,7 +71,7 @@ def get_top_docs():
             doc_arr['member_name'] = member_name
 
             data_doc = (doc_name, member_name)
-            # Insert new employee
+            
             cursor.execute(add_doc, data_doc)
             emp_no = cursor.lastrowid
             cnx.commit()
@@ -92,7 +92,7 @@ def create_message(top_docs):
     template = env.get_template('index.html')
 
     table = template.render(items=top_docs)
-    # менять путь на свой
+    
     with open("C:/Users/noten/OneDrive/Desktop/task/table.html", "w", encoding="utf-8") as fh:
         fh.write(table)
     return table
